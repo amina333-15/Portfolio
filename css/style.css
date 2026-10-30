@@ -1,5 +1,6 @@
 html {
-    scroll-padding-top: 18vh; /* Laisse un espace équivalent à la hauteur du header + marge */
+    scroll-padding-top: 18vh;
+    /* Laisse un espace équivalent à la hauteur du header + marge */
 }
 
 @font-face {
@@ -92,8 +93,8 @@ nav a.active {
     text-align: center;
     color: #111;
     font-weight: bold;
-/*    border: 2px solid #7a012a;*/
-  /*  border-radius: 50px;*/
+    /*    border: 2px solid #7a012a;*/
+    /*  border-radius: 50px;*/
     /*background-color: #7a012a;*/
     padding: 10px;
     box-sizing: border-box;
@@ -104,7 +105,7 @@ nav a.active {
     color: #7a012a;
     border: 2px solid #7a012a;
     border-radius: 50px;
-/*    background-color: #ffffff;*/
+    /*    background-color: #ffffff;*/
     padding: 10px;
 }
 
@@ -144,14 +145,15 @@ caption {
     text-align: left;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #e4d8cc;
     padding: 12px;
     text-align: left;
     font-size: 15px;
 }
 
-tr:last-of-type{
+tr:last-of-type {
     background-color: #f9f6f0;
 }
 
@@ -174,13 +176,15 @@ form label {
     font-weight: bold;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     border: 1px solid #e4d8cc;
     border-radius: 4px;
     font-family: 'Avenir', sans-serif;
 }
 
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
     outline: none;
     border-color: #7a012a;
 }
@@ -199,24 +203,24 @@ section#projet3 {
     align-content: center;
 }
 
-.about p{
+.about p {
     margin-left: 25%;
     width: 50%;
     text-align: left;
 
 }
 
-.about img{
-    width : 200px;
-    height : 200px;
+.about img {
+    width: 200px;
+    height: 200px;
 }
 
-.photoProjets img{
-    width : 25%;
-    height : 15%;
+.photoProjets img {
+    width: 25%;
+    height: 15%;
 }
 
-form input{
+form input {
     width: 50%;
     height: 50%;
     border-radius: 15px;
@@ -226,7 +230,7 @@ form input{
     background-color: #faf7f4;
 }
 
-form textarea{
+form textarea {
     width: 50%;
     height: 50%;
     margin-left: 10px;
