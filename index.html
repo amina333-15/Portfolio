@@ -2,12 +2,12 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Amina Salmi - Monopage</title>
 
-    <link rel="icon" href="assets/img/logoSA.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/img/logoSA.png" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -16,8 +16,8 @@
         <h1>SALMI Amina</h1>
         <p>Étudiante en développement web et applications</p>
 
-        <hr>
-
+        <hr />
+        <!-- Il est préférable d'ajouter une bordure inférieure (`border-bottom`) au paragraphe, car la balise `<hr>` possède une signification sémantique de « rupture thématique ». -->
         <nav>
             <ul>
                 <li><a href="#about">À propos de moi</a></li>
@@ -36,6 +36,7 @@
             <figure>
                 <img src="assets/img/logoSA.png" alt="Logo SALMI Amina">
             </figure>
+            <!-- <figure> n’est pas vraiment nécessaire ici. Utilisez <figure> avec <figcaption>  lorsque vous souhaitez associer le contenu à une légende. -->
 
             <!-- Côté Droit (À propos détaillé) -->
             <h2>À propos de moi</h2>
@@ -46,12 +47,13 @@
                 suis actuellement en BUT Informatique en Année Spéciale à l'IUT Lyon 1 (La Doua).
             </p>
             <a href="#projets" class="btn">Projets</a>
-            <a href="assets/media/CV%20(4).pdf" target="_blank" class="btn">CV</a>
+            <a href="assets/media/CV%20(4).pdf" target="_blank" class="btn">CV</a> 
+            <!-- Essayez d'enregistrer vos documents sans espace dans le nom. Cela facilitera la création de liens par la suite. -->
         </section>
 
         <!-- Section 2 : Parcours & Expériences -->
         <section id="parcours">
-            <h2>Présentation & Parcours</h2>
+            <h2>Présentation &amp; Parcours</h2>
             <p>
                 Moi, c'est SALMI Amina, étudiante en
                 développement web et application.
@@ -171,12 +173,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>BUT Informatique (AS)</strong></td>
+                        <th>BUT Informatique (AS)</th>
                         <td>À venir</td>
                         <td>À venir</td>
                     </tr>
                     <tr>
-                        <td rowspan="2"><strong>BTS SIO (SLAM)</strong></td>
+                        <th rowspan="2">BTS SIO (SLAM)</th>
                         <td>Site WordPress (AF.ELEC)</td>
                         <td>CMS WordPress, JS, HTML/CSS</td>
                     </tr>
@@ -200,19 +202,21 @@
 
             <form action="#" method="post">
                 <h3>Envoyez-moi un message</h3>
+                <p>Tous les champs sont obligatoires</p>
+                <!-- Si un champ de formulaire est obligatoire, informez-en toujours l’utilisateur. -->
 
                 <p>
-                    <label for="nom">Votre nom :</label><br>
+                    <label for="nom">Votre nom :</label><br />
                     <input type="text" id="nom" name="nom" required class="form-input">
                 </p>
 
                 <p>
-                    <label for="email">Votre e-mail :</label><br>
+                    <label for="email">Votre e-mail :</label><br />
                     <input type="email" id="email" name="email" required class="form-input">
                 </p>
 
                 <p>
-                    <label for="message">Votre message :</label><br>
+                    <label for="message">Votre message :</label><br />
                     <textarea id="message" name="message" rows="5" required class="form-textarea"></textarea>
                 </p>
 
