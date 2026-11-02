@@ -206,7 +206,7 @@ section#projet2,
 section#projet3 {
     text-align: left;
     padding: 30px;
-    height: 515px;
+    height: 515px; /* Cela casse la mise en page. Évitez autant que possible d’utiliser la propriété « height ». Il est préférable de laisser le contenu se disposer naturellement.*/
 }
 
 .about {
@@ -224,17 +224,17 @@ section#projet3 {
 
 .about img {
     width: 200px;
-    height: 200px;
+    height: 200px; /* Les images conservent toujours leur ratio hauteur/largeur par défaut, sauf si vous spécifiez à la fois la hauteur et la largeur ; évitez donc de définir la hauteur (ou largeur. une seulement). */
 }
 
 .photoProjets img {
     width: 25%;
-    height: 15%;
+    height: 15%; /* Les images conservent toujours leur ratio hauteur/largeur par défaut, sauf si vous spécifiez à la fois la hauteur et la largeur ; évitez donc de définir la hauteur. */
 }
 
 form input {
     width: 50%;
-    height: 50%;
+    height: 50%; /* sans effet */
     border-radius: 15px;
 
     margin-left: 10px;
@@ -244,7 +244,7 @@ form input {
 
 form textarea {
     width: 50%;
-    height: 50%;
+    height: 50%; /* 50% de quoi?  sans effet */
     margin-left: 10px;
     border-radius: 15px;
     background-color: #faf7f4;
