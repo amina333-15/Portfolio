@@ -1,6 +1,6 @@
+/* --- Styles globaux & Variables --- */
 html {
-    scroll-padding-top: 18vh;
-    /* Laisse un espace équivalent à la hauteur du header + marge */
+    scroll-padding-top: 7rem; /* Ajusté par rapport au nouveau header en rem */
 }
 
 @font-face {
@@ -11,6 +11,7 @@ html {
 body {
     background-color: #e4d8cc;
     font-family: 'Avenir', sans-serif;
+    margin: 0;
 }
 
 a {
@@ -18,50 +19,45 @@ a {
     text-decoration: underline;
 }
 
+/* --- Header et Navigation --- */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 16vh;
     background-color: #ffffff;
     box-sizing: border-box;
     z-index: 200;
     padding: 10px;
     box-shadow: 0px 4px 6px #7a01296d;
+    width: 100%;
 }
 
+/* Par défaut sur mobile : header en flux normal (non fixé pour éviter qu'il n'occupe tout l'écran) */
 main {
     background-color: #f4ece6;
     border: 2px solid #e4d8cc;
-    margin-top: 18vh;
+    margin-top: 0; 
 }
 
-section {
-    border: 2px solid #f4ece6;
-    background-color: #ffffff;
-    margin: 10px;
-    padding: 10px;
+/* Sur les écrans plus larges (> 600px / ~37.5rem), on passe en fixed */
+@media (min-width: 37.5rem) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 7rem; /* Hauteur définie de manière stable en rem */
+    }
+    
+    main {
+        margin-top: 7rem; /* Compense la hauteur du header fixe */
+    }
 }
 
-strong {
-    color: #7a012a;
-}
-
-h1 {
-    font-size: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+header hr {
+    border-color: #7a012a;
 }
 
 header p {
     font-size: 15px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border-bottom: 1px;
-    color-border: #7a012a;
 }
 
 nav ul {
@@ -81,41 +77,68 @@ nav a {
     font-family: 'Poppins', sans-serif;
 }
 
-a:hover,
-nav a.active {
+/* --- Typographie & Structure --- */
+strong {
     color: #7a012a;
-    text-decoration: underline;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
 
-/* --- Style des boutons (appliqué aux liens .btn) --- */
+section {
+    border: 2px solid #f4ece6;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Suppression de la hauteur figée height: 515px pour laisser respirer le contenu */
+section#projet1,
+section#projet2,
+section#projet3 {
+    text-align: left;
+    padding: 30px;
+}
+
+/* --- États interactifs (Hover / Focus) --- */
+a:hover,
+a:focus,
+nav a:hover,
+nav a:focus {
+    color: #7a012a;
+    text-decoration: underline;
+    font-weight: bold;
+    outline: none; /* Remplacé par un style propre si nécessaire, ou géré proprement */
+}
+
+/* --- Boutons et Liens .btn --- */
 .btn {
     display: inline-block;
     width: 150px;
     text-align: center;
     color: #111;
     font-weight: bold;
-    /*    border: 2px solid #7a012a;*/
-    /*  border-radius: 50px;*/
-    /*background-color: #7a012a;*/
     padding: 10px;
     box-sizing: border-box;
     text-decoration: underline;
+    transition: all 0.2s ease;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     color: #7a012a;
     border: 2px solid #7a012a;
     border-radius: 50px;
-    /*    background-color: #ffffff;*/
     padding: 10px;
+    outline: none;
 }
 
-header hr {
-    border-color: #7a012a;
-}
-
-/* --- Styles pour les cartes projets (portfolio.html) --- */
+/* --- Cartes projets (portfolio.html) --- */
 article {
     border: 1px solid #e4d8cc;
     border-radius: 8px;
@@ -131,7 +154,7 @@ article h3 {
     font-family: 'Poppins', sans-serif;
 }
 
-/* --- Style du tableau sémantique (portfolio.html) --- */
+/* --- Tableau sémantique (portfolio.html) --- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -155,90 +178,71 @@ td {
     font-size: 15px;
 }
 
-tr:last-of-type {
-    background-color: #f9f6f0;
-}
-
 th {
     background-color: #7a012a;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even),
+tr:last-of-type {
     background-color: #f9f6f0;
 }
 
-/* --- Style du formulaire (contact.html) --- */
+/* --- Section About & Images --- */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about p {
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* On ne garde que la largeur pour préserver le ratio d'origine */
+.about img {
+    width: 200px;
+    height: auto; 
+}
+
+.photoProjets img {
+    width: 25%;
+    height: auto; 
+}
+
+/* --- Formulaires --- */
 form {
     margin-top: 20px;
 }
 
 form label {
     font-weight: bold;
+    display: block;
+    margin-top: 10px;
 }
 
 form input,
 form textarea {
+    width: 100%;
+    max-width: 500px;
     border: 1px solid #e4d8cc;
-    border-radius: 4px;
+    border-radius: 15px;
     font-family: 'Avenir', sans-serif;
+    margin-left: 0; /* Nettoyé pour un meilleur alignement */
+    margin-top: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #faf7f4;
 }
 
 form input:focus,
 form textarea:focus {
     outline: none;
     border-color: #7a012a;
-}
-
-section#projet1,
-section#projet2,
-section#projet3 {
-    text-align: left;
-    padding: 30px;
-    height: 515px;
-}
-
-.about {
-    align-items: center;
-    text-align: center;
-    align-content: center;
-}
-
-.about p {
-    margin-left: 25%;
-    width: 50%;
-    text-align: left;
-
-}
-
-.about img {
-    width: 200px;
-    height: 200px;
-}
-
-.photoProjets img {
-    width: 25%;
-    height: 15%;
-}
-
-form input {
-    width: 50%;
-    height: 50%;
-    border-radius: 15px;
-
-    margin-left: 10px;
-
-    background-color: #faf7f4;
-}
-
-form textarea {
-    width: 50%;
-    height: 50%;
-    margin-left: 10px;
-    border-radius: 15px;
-    background-color: #faf7f4;
-
 }
 
 button {
@@ -253,4 +257,6 @@ button {
     padding: 10px;
     box-sizing: border-box;
     text-decoration: none;
+    cursor: pointer;
+    margin-top: 15px;
 }
