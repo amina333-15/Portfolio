@@ -60,6 +60,8 @@ header p {
     font-size: 15px;
     margin-top: 5px;
     margin-bottom: 10px;
+    border-bottom: 1px;
+    color-border: #7a012a;
 }
 
 nav ul {
